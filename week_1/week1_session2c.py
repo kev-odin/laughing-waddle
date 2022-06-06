@@ -27,7 +27,12 @@ Evaluate the performance of your algorithm and state any strong/weak or future p
 """
 U: Replicate the result of the inbuilt power function
 M: Recursion, simple math
-P: Base case - n is 0 = 1 OR x is 0; recursive case n is something other than 0
+P: Base case:
+    1) n is 0 return 1 
+    2) x is 0 return 0
+   Recursive case:
+   1) n is greater than 0, decrement n to get closer to base case
+   2) n is less than 0, increment n to get closer to base case
 I: See below
 R: Test cases are in main function
 E: 
@@ -36,7 +41,7 @@ Space complexity O(n) because we are using the call stack to hold our values bef
 """
 
 
-def kevc_solution(x: int, n: int):
+def kevc_solution(x: float, n: int):
     if x == 0:
         return 0
     if n == 0:
