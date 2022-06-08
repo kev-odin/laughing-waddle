@@ -16,21 +16,21 @@ Review the code by running specific example(s) and recording values (watchlist) 
 Evaluate the performance of your algorithm and state any strong/weak or future potential work.  
 
 U:
-- Given a List and k number
-- if k given, but no frequency matched
-- k is larger than the List
-- If more than one number in the List have the same frequency equal to k.
-- If the length of the List less than k.
-- What if the length of the list is empty
-- Do we exit if we get frequency match k? or we continue to check the entire?
+- Given a List and k number. Output is an element that appears k number.
+- What if k is given, but no frequency match?
+- What if k is larger than the List?
+- What if more than one number in the List has the same frequency equal to k.
+- What if the length of the List is less than k?
+- What if the length of the list is empty?
+- Do we have to exit if we get frequency match k? Or do we continue to check the entire List?
 M:
-- Hash table, dictionary, counter, frequency
+- Hash table, Dictionary, Counter, Frequency.
 P:
-- create a dictionary
-- iterate the List and make the key to be the value of the List and the value to be a frequency.
-- Loop through the dictionary to the end to find the value match with k.
+- Creating a dictionary
+- Iterating the List and making the key to be the value of the List and the value to be a frequency.
+- Looping through the dictionary to the end to find the value match with k.
 E:
-- Time complexity: N + N = O(2N) - > O(N)
+- Time complexity: O(N) + O(N) = O(2N) - > O(N)
 - Space complexity: O(N)
 
 """
