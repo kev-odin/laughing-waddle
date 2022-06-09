@@ -32,8 +32,56 @@ P:
 E:
 - Time complexity: O(N) + O(N) = O(2N) - > O(N)
 - Space complexity: O(N)
+"""
+
+"""
+Solution using standard library
+"""
+from collections import Counter
+
+
+def kevc_solution(array: list, freq: int):
+    count = Counter(array)
+    elements = [value for value, count in count.items() if count == freq]
+    return elements
+
+
+"""
+U: Same as group above
+M: Same as group above
+P: 
+    1) Use a dictionary to keep track of seen elements.
+    2) Elements that are seen are incremented by 1.
+    3) At the end a list of elements that match k are returned.
+I: See implementation below.
+R: Test cases are in main method.
+E: 
+    Time: O(n) because this solution will iterate through the list twice.
+    Space: O(n) because this solution is storing value in another data structure
+        that will grow as more elements are added.
 
 """
 
+
+def kevc_solution2(array: list, freq: int):
+    if not array:
+        return
+
+    if freq > len(array):
+        return
+
+    seen = {}
+    for element in array:
+        if element not in seen:
+            seen[element] = 1
+        else:
+            seen[element] += 1
+
+    return [value for value, count in seen.items() if count == freq]
+
+
 if __name__ == "__main__":
-    pass
+    input = [8, 7, 9, 6, 7, 5, 1, 5]
+    freq = 2
+    print(kevc_solution(input, freq))
+    print(kevc_solution2(input, freq))
