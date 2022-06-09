@@ -1,21 +1,17 @@
 """
-Problem 1: Find a pair with given sum
-Given an array of size n and a number x, determine the first two elements in the array, if any, whose sum is exactly x.
+Problem 1: Majority Element
+Given an array nums of size n, return the majority element.
 
-Examples:
+The majority element is the element that appears more than ⌊n / 2⌋ times.
+You may assume that the majority element always exists in the array.
 
-Input: [3, 2, 6, 9, 5], 9
-Output: (3, 6)
-"""
+Example 1:
+Input: nums = [3,2,3]
+Output: 3
 
-"""
-UMPIRE  
-Understand what the interviewer is asking for by using test cases and questions about the problem.  
-Match what this problem looks like to known categories of problems, e.g. Linked List or Dynamic Programming and strategies or patterns in those categories.  
-Plan the solution with appropriate visualizations and pseudocode.  
-Implement the code to solve the algorithm.  
-Review the code by running specific example(s) and recording values (watchlist) of your code's variables along the way.  
-Evaluate the performance of your algorithm and state any strong/weak or future potential work.  
+Example 2:
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
 """
 
 if __name__ == "__main__":
