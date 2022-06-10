@@ -94,4 +94,4 @@ if __name__ == "__main__":
     ]
     for idx, array in enumerate(test_cases, start=1):
         print(f"Test case {idx}: {sorted(array)}")
-        print(f"Longest subsequence: {kevc_solution(array)}")
+        print(f"Longest subsequence: {kevc_solution(array)}")  # type: ignore

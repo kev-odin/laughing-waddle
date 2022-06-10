@@ -44,6 +44,10 @@ E:
     Space: O(n) because another DS is used to maintain counts
 """
 
+
+import collections
+
+
 def solution(array: list) -> int:
     seen = {}
 
@@ -57,11 +61,29 @@ def solution(array: list) -> int:
         if count > len(array) // 2:
             return key
 
+    return -1
+
+
+"""
+Solution below uses the counter object from collections.
+E: 
+    Time: O(n) because to create a Counter object, the list needs to be traversed and added
+    Space: O(n) because all the values that were in the array object are copied to Counter
+"""
+
+
+def kevc_solution(array: list):
+    counts = collections.Counter(array)
+    return max(counts, key=counts.get)  # type: ignore
 
 
 if __name__ == "__main__":
-    nums = [1]
-    print(solution(nums))
-    nums = [2,2,1,1,1,2,2]
-    print(solution(nums))
+    test_cases = [
+        [3, 2, 3],
+        [2, 2, 1, 1, 1, 2, 2],
+        [3, 3, 3, 3, 1, 1, 1],
+    ]
 
+    for array in test_cases:
+        print(f"Current array: {array} | Majority element: {solution(array)}")
+        print(f"Current array: {array} | Majority element: {kevc_solution(array)}")
