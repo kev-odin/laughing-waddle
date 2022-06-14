@@ -16,14 +16,29 @@ Review the code by running specific example(s) and recording values (watchlist) 
 Evaluate the performance of your algorithm and state any strong/weak or future potential work.  
 
 U:
-    bao:
-    far:
-    jes:
-    kev:
-    tin:
-    xin:
+    bao:any order specific order to merge?
+        duplicates allowed? yes :)
+        how to handle duplicates?
+        
+    far: do we care about the length of the list? (same, different length)
+    jes: driver hehe
+    kev: what happens if we're given one empty list?
+    tin: agree :)
+    xin: merge in descending or ascending
+        is there a cycle?
 M:
+    dummy node -> merged list
+    two pointers -> pointer in each list and decide what will be added to the merged list next
+    if not duplicates: set
+
 P:
+    - cases:
+    if one current node == None
+    check which one is less than the other one
+    - the plannnn
+    initialize two pointers:
+    initialize a dummy node pointing to nothing
+    while loop both are not none?
 I:
 R:
 E:

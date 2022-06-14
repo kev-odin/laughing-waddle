@@ -22,14 +22,35 @@ Review the code by running specific example(s) and recording values (watchlist) 
 Evaluate the performance of your algorithm and state any strong/weak or future potential work.  
 
 U:
-    bao:
-    far:
-    jes:
-    kev:
-    tin:
-    xin:
-M:
+    bao: Are there None value in the middle of the list?
+    far: Is it possible that the list is empty?
+    jes: Are there only one cycle in the linkedlist? 
+         would the value always be numbers/int?
+         duplicated values?
+    kev: Do we have any space requirements?
+    tin: Agree
+    xin: Agree
+M: 
+    slow fast pointers
+    hashtable (value : next)
+    singly linkedlist
+    
 P:
+        
+        s/f
+        3 -> 2 -> 0 -> 4 
+            |          |
+                ------
+    # slow, fast pointers
+    inilize the slow and fast pointers to be the head of the linkedlist
+    
+    while loop to check if the fast and fast.next is not None 
+        move slow pointer one by one slow = slow.next
+        move fast pointer two by two fast = fast.next.next
+        
+        check if the slow is the same as the fast pointer:
+            if yes, return True
+    return False
 I:
 R:
 E:
