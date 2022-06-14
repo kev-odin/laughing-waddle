@@ -96,6 +96,20 @@ def kevc_solution2(flight_plans: list) -> str:
     return "".join(dest_a.difference(dest_b))
 
 
+def jenw_solution(destArr):
+    pathsDct = {}
+    # creates a dictionary with the destArr
+    for paths in destArr:
+        pathsDct[paths[0]] = paths[1]
+    print(pathsDct)
+    # go through the pathsDct, find the next key
+    for key in pathsDct:
+        dest = pathsDct[key]
+        if pathsDct.get(pathsDct[key], None) == None:
+            return dest
+    return None
+
+
 if __name__ == "__main__":
 
     test_cases = [
@@ -108,3 +122,9 @@ if __name__ == "__main__":
     for tests in test_cases:
         print(f"Paths: {tests}\nDestination City: {kevc_solution(tests)}\n")  # type: ignore
         print(f"Paths: {tests}\nDestination City: {kevc_solution2(tests)}\n")  # type: ignore
+
+    print(
+        jenw_solution(
+            [["London", "New York"], ["New York", "Lima"], ["Lima", "Sao Paulo"]]
+        )
+    )

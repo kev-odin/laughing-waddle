@@ -77,6 +77,19 @@ def kevc_solution(array: list):
     return max(counts, key=counts.get)  # type: ignore
 
 
+def tpham_solution(array: list) -> int:
+    seen = {}
+
+    for num in array:
+        if num not in seen:
+            seen[num] = 1
+        else:
+            seen[num] += 1
+
+    max_count = max(seen, key=seen.get)  # type: ignore
+    return max_count
+
+
 if __name__ == "__main__":
     test_cases = [
         [3, 2, 3],
@@ -87,3 +100,4 @@ if __name__ == "__main__":
     for array in test_cases:
         print(f"Current array: {array} | Majority element: {solution(array)}")
         print(f"Current array: {array} | Majority element: {kevc_solution(array)}")
+        print(f"Current array: {array} | Majority element: {tpham_solution(array)}")

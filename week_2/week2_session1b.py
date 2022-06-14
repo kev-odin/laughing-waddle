@@ -93,5 +93,5 @@ if __name__ == "__main__":
         [random.randint(1, 10) for _ in range(10)],
     ]
     for idx, array in enumerate(test_cases, start=1):
-        print(f"Test case {idx}: {sorted(array)}")
+        print(f"Test case {idx}: {sorted(array)}")  # type: ignore
         print(f"Longest subsequence: {kevc_solution(array)}")  # type: ignore
