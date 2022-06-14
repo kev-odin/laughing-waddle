@@ -28,7 +28,7 @@ Evaluate the performance of your algorithm and state any strong/weak or future p
 U:
     bao:
     far:
-    jen:
+    jes:
     kev:
     tin:
     xin:
