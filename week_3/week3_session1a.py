@@ -41,10 +41,40 @@ P:
     -current node equals current node points to next node
     -return the head of the linked list 
  
-I:
-R:
+I: See below.
+R: See below.
 E:
+    Time: O(n) because of the while loop, and single traversal
+    Space: O(1) because no extra DS or memory used for solution
 """
 
+
+class Node:
+    def __init__(self, next=None, val=None):
+        self.next = next
+        self.val = val
+
+    def __str__(self):
+        return str(self.val)
+
+
+def solution(head):
+    current = head
+
+    if not head:
+        return False
+
+    while current:
+        if current.next is None:
+            return head  # reached the end
+        elif current.val == current.next.val:
+            current.next = current.next.next  # duplicate node
+        else:
+            current = current.next
+
+    return head
+
+
 if __name__ == "__main__":
-    pass
+    test = Node(Node(Node(val=1), val=2), val=2)
+    print(solution(test))

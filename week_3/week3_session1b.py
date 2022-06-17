@@ -56,11 +56,14 @@ R:
 E: Time complexity -> O(n) because one while loop
    Space complexity -> O(1) because we are not going to use any extra space or memory in our DS
 """
+
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
-        self.next= next
-        
+        self.next = next
+
+
 def solution(head):
     slowNode = head
     fastNode = head
@@ -70,5 +73,7 @@ def solution(head):
         if fastNode == slowNode:
             return True
     return False
+
+
 if __name__ == "__main__":
     pass

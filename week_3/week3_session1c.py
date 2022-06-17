@@ -32,17 +32,60 @@ M:
     if not duplicates: set
 
 P:
-    - cases:
-    if one current node == None
-    check which one is less than the other one
-    - the plannnn
-    initialize two pointers:
-    initialize a dummy node pointing to nothing
-    while loop both are not none?
-I:
-R:
-E:
+- cases:
+if one current node == None
+check which one is less than the other one
+- the plan
+initialize two pointers:
+initialize a dummy node pointing to nothing
+while loop both are not none?
+compare the two values of the two pointers, 
+    value that is less added to the dummy node
+    increment the pointer
+
+I: see below
+R: see below. need to implement a linked list
+E: 
+    * Time: O(n) because of the traversal of both lists
+    * Space: O(1) because no additional data structure is used to store information
 """
+
+
+class Node:
+    def __init__(self, dataval=None):
+        self.val = dataval
+        self.next = None
+
+
+class SLinkedList:
+    def __init__(self):
+        self.head = None
+
+
+def solution(leftLst, rightLst):
+    leftNode = leftLst
+    rightNode = rightLst
+    #       need to make two pointers dummy node needs to stay at the
+    #       head while current makes connections; we swtiched it
+    dummyNode = curr = Node()
+
+    while leftNode and rightNode:
+        if leftNode.val < rightNode.val:
+            dummyNode.next = leftNode
+            leftNode = leftNode.next
+            print(dummyNode.val)
+        else:
+            dummyNode.next = rightNode
+            rightNode = rightNode.next
+            print(dummyNode.val)
+        dummyNode = dummyNode.next
+
+    # the rest of the values are already linked so we just need to connect the
+    # last node to connect to the rest of the other list
+    if leftNode or rightNode:
+        dummyNode.next = leftNode if leftNode else rightNode
+        print(dummyNode)
+    return curr.next
 
 
 if __name__ == "__main__":
