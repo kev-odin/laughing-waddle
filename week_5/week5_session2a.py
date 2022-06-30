@@ -12,7 +12,6 @@ Postfix notations keep operators after operands. A postfix expression for the ex
 Play with this infix, prefix and postfix notations on this infix and postfix converter and build an intuition.
 
 Example:
-
 Input: "5 1 2 + 4 * + 3 -"
 Output: 14
 
@@ -31,19 +30,60 @@ Review the code by running specific example(s) and recording values (watchlist) 
 Evaluate the performance of your algorithm and state any strong/weak or future potential work.
 
 U:
-    bao:
-    far:
-    jes:
-    kev:
-    tin:
-    xin:
+    bao: Should the number of value is more than the number of operands? And vice-versa. What is the input?
+    far: What happens if the string is empty? 
+    jes: Single operand without two values? Always going to have a valid expression.
+    kev: Driving... - Single value - What do we return?
+    tin: Would it be error if divide by 0? Example: 6 0 /
+    xin: Agree.
 M:
+    * Stack
+    * Tree traversal
+    * Recursion
 P:
+    5 3 4 * + 3 -
+    Create a stack.
+    Push elements onto a stack one by one if they are values
+    Pop twice for two numbers when we encounter an operand (* + - /)
+        Keep track of first and second values popped
+        Calculate and push the result back on the stack
+    Continue we reach the end of the string
+    Return the last element on the stack
 I:
+    * See below
 R:
+    * See below
 E:
+    Time: O(n) b/c of the length of the expression
+    Space: O(n) b/c stack will scale with the input
 
 """
 
+
+def postfix(exp: str) -> int:
+    cool_stack = []
+
+    for token in exp:
+        if token in "*+-/":
+
+            second = cool_stack.pop()
+            first = cool_stack.pop()
+
+            if token == "*":
+                cool_stack.append(first * second)
+            elif token == "+":
+                cool_stack.append(first + second)
+            elif token == "-":
+                cool_stack.append(first - second)
+            elif token == "/":
+                cool_stack.append(first // second)
+
+        elif token != " ":
+            cool_stack.append(int(token))
+
+    return cool_stack.pop() if len(cool_stack) != 0 else 0
+
+
 if __name__ == "__main__":
-    pass
+    example = ""
+    print(postfix(example))
