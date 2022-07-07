@@ -35,14 +35,25 @@ Review the code by running specific example(s) and recording values (watchlist) 
 Evaluate the performance of your algorithm and state any strong/weak or future potential work.
 
 U:
-    bao:
-    far:
-    jes:
-    kev:
-    tin:
-    xin:
-M:
+    b: can we pop at 0? two stacks? (pop from one and pop from the other)
+    k: can we use another data structure to implement a queue
+    f: using a stack, but can we use a queue too? pop from both sides? (b)pop from the end
+    t: agree with all
+    x: CANADA 
+    j: driver
+    
+M: 
+    stack obviously
 P:
+    implement an enqueue method first
+    - adding to the top of the stack
+    pop:
+    - move all elements except the first element from the main stack into fake stack 
+    - return and delete 
+    peek:
+    - move all elements and return the first element
+    empty:
+    - if stack
 I:
 R:
 E:
