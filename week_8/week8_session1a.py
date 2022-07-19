@@ -86,7 +86,7 @@ def solution(image, sr=1, sc=1, new_color=2):
                 and (next_row, next_col) not in visited
             ):
                 if image[next_row][next_col] != starting_color:
-                    return
+                    continue
 
                 dfs(next_row, next_col)
 
