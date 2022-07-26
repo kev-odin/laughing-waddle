@@ -60,7 +60,7 @@ Review:
 
 """
 from collections import deque
-class Stack()
+class Stack():
     def __init__(self):
         self.queue = deque()
         self.aux_queue = deque()
