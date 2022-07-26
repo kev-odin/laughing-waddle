@@ -24,5 +24,17 @@ P:
 I:
 R:
 E:
-
 """
+
+
+def solution(arr, k) -> int:
+    arr.sort()
+
+    return arr[k - 1]
+
+
+if __name__ == "__main__":
+    elements = [7, 10, 4, 3, 20, 15]
+    value = 1
+
+    print(solution(elements, value))
