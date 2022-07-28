@@ -54,7 +54,9 @@ def bal_para(s):
             
             total += stack.pop(-1)
     return total
-    
+
+
+# testing
 print(bal_para("(()(()))"))
             
     
