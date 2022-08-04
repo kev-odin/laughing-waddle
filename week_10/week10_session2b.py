@@ -4,14 +4,24 @@ Problem #2: Binary Tree Paths
 Given a binary tree, print/return all root-to-leaf paths.
 
 U:
-    bao:
-    far:
-    jes:
-    kev:
-    tin:
-    xin:
+    bao: What order should the nodes be printed? Order of visited.
+    far: Can we be given an empty tree? No, you will be given at least one node.
+    jes: What should our question output? List of list traveral value.
+    kev: Driver.
+    tin: Would bfs be helpful in this situation?
+    xin: What if there are no children? Just print the root.
 M:
+    DFS to find the paths
+    Using a set for seen nodes
 P:
+    global currentPath = []
+    global totalPath = []
+    dfs(root):
+        if not root.left and not root.right:
+            totalPath.append(currentPath[:])
+        currentPath.append(root.val)
+        dfs(root.left)
+        dfs(root.right)
 I:
 R:
 E:
@@ -37,18 +47,21 @@ if __name__ == "__main__":
               2   3
              /     \
             4       5
+            [[1, 2, 4], [1, 3, 5]]
     Another Tree:
                 1
                / \
               2   3
              / \
             4   5
+            [[1, 3], [1, 2, 4], [1, 2, 5]]
     Best Tree:
                 1
                / \
               2   3
              / \   \
             4   5   6
+            [[1, 2, 4], [1, 2, 5], [1, 3, 6]]
 
     """
     basic = TreeNode(
