@@ -9,19 +9,33 @@ If we are asked to print the leaf nodes from right to left, how would you change
 
 
 U:
-    bao:
-    far:
-    jes:
-    kev:
-    tin:
-    xin:
+    bao: What if the tree only have right leaf nodes? Print the only leaf node
+    far: Agree with others
+    jes: There are leaf nodes at different levels? Yes
+    kev: Can the input tree be null? Assume that the tree is not null
+    tin: What are height and depth of the tree? 1-infinity
+    xin: Can we use extra space? Any space constraints?  Yes, no constraint
 M:
+Depth-first Search
+Recursion
+🍞 first search
 P:
+Base case:
+Check if the root is not null
+
+Traverse down the tree from the left and then the right.
+Check if the node have any children (if the node is a leaf node or not), if not then print the node.
 I:
 R:
 E:
 
 """
+1
+ \
+  1
+   \
+    1
+
 
 
 class TreeNode:
