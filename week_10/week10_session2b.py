@@ -64,3 +64,4 @@ if __name__ == "__main__":
         left=TreeNode(2, left=TreeNode(4), right=TreeNode(5)),
         right=TreeNode(3, right=TreeNode(6)),
     )
+
