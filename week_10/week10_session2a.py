@@ -6,8 +6,6 @@ Given a binary tree, print all its leaf nodes from left to right
 Extra Challenge: 
 If we are asked to print the leaf nodes from right to left, how would you change your solution?
 
-
-
 U:
     bao: What if the tree only have right leaf nodes? Print the only leaf node
     far: Agree with others
@@ -28,14 +26,15 @@ Check if the node have any children (if the node is a leaf node or not), if not 
 I:
 R:
 E:
+    Time: O(N) or O(h)
+    Space: O(1)
 
-"""
 1
  \
   1
    \
     1
-
+"""
 
 
 class TreeNode:
@@ -46,6 +45,17 @@ class TreeNode:
 
     def __str__(self):
         return f"{self.val}"
+
+
+def solution(root):
+    if not root:
+        return
+
+    if not root.left and not root.right:
+        print(root.val)
+
+    solution(root.left)
+    solution(root.right)
 
 
 if __name__ == "__main__":
@@ -83,3 +93,7 @@ if __name__ == "__main__":
         left=TreeNode(2, left=TreeNode(4), right=TreeNode(5)),
         right=TreeNode(3, right=TreeNode(6)),
     )
+
+    solution(basic)
+    solution(another)
+    solution(best)
