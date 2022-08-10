@@ -41,6 +41,8 @@ P:
 I:
 R:
 E:
+  time: O(logn) if balanced, unbalanced O(n)
+  space: O(logn) if balanced, unbalanced O(n)
 
 """
 

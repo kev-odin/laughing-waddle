@@ -30,14 +30,25 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 
 
 U:
-    bao:
-    far:
-    jes:
-    kev:
-    tin:
-    xin:
+    bao: what if it's not balanced?
+    far: will we see unique nodes? any duplicates allowed?
+    jes: driver
+    kev: is it a complete tree?
+    tin: what if a root is empty or null?
+    xin: missing :(
 M:
+
 P:
+bounds(node, left, right):
+    r
+
+validate(root, )
+    if not node:
+        True
+    if node.val < right and node.val  > left:
+        return False
+    return bounds(node.left, leftbound, node.val)
+
 I:
 R:
 E:
